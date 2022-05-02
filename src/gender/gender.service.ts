@@ -26,7 +26,7 @@ export class GenderService {
   ) {
     const storeData = await this.genderModel.findOne({ storeName });
     return storeData.dummyData.filter(
-      ({ date }) => date >= startMs && date <= endMs,
+      ({ date }) => date >= startMs || date <= endMs,
     );
   }
 }

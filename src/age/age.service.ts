@@ -24,7 +24,7 @@ export class AgeService {
   ) {
     const storeData = await this.AgeModel.findOne({ storeName });
     return storeData.dummyData.filter(
-      ({ date }) => date >= startMs && date <= endMs,
+      ({ date }) => date >= startMs || date <= endMs,
     );
   }
 }
